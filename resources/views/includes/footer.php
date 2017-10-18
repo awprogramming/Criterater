@@ -1,0 +1,1 @@
+<div id="copyright text-right">© Copyright 2017 <a href="http://ariedwolf.com">Arie Wolf</a></div>
