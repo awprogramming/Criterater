@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Criterating as Criterating;
 
+
 use Illuminate\Http\Request;
 
 class CriteratingController extends Controller
@@ -46,6 +47,9 @@ class CriteratingController extends Controller
         $criterating_data = $this->criterating->find($criterating_id);
         $data['criterating_id'] = $criterating_id;
         $data['description'] = $criterating_data->description;
+        $criteria = [];
+        $criteria = $criterating_data->criteria;
+        $data['criteria'] = $criteria;
 
         return view('criterating/show',$data);
     }
@@ -59,7 +63,6 @@ class CriteratingController extends Controller
 
         return view('criterating/form',$data);
     }
-dd
     public function modify(Request $request,$criterating_id,Criterating $criterating)
     {
         $data = [];
@@ -82,6 +85,13 @@ dd
         }
         $data['modify'] = 0;
         return view('criterating/form',$data);
+    }
+
+    public function delete(Request $request,$criterating_id)
+    {
+        $criterating_data = $this->criterating->find($criterating_id);
+        $criterating_data->delete();
+        return redirect('criteratings');
     }
 
 

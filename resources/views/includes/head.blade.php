@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta name="description" content="Criteria based rankings website">
 <meta name="author" content="Arie Wolf">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>Criterater</title>
 
