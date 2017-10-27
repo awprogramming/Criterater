@@ -19,5 +19,19 @@ class UsersSeeder extends Seeder
                 'password' => bcrypt('carling'),
             ]
         );
+        DB::table('users')->insert(
+            [
+                'name'=> 'Eric Branse',
+                'email'=> 'eric@ismproject.org',
+                'password' => bcrypt('doodie'),
+            ]
+        );
+        DB::table('users')->insert(
+            [
+                'name'=> 'Derek Sekuler',
+                'email'=> 'derek@ismproject.org',
+                'password' => bcrypt('diarrhea'),
+            ]
+        );
     }
 }

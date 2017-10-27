@@ -17,6 +17,8 @@ class CreateCriteratingsTable extends Migration
         Schema::create('criteratings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
+            $table->integer('owner')->unsigned();
+            $table->foreign('owner')->references('id')->on('users')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

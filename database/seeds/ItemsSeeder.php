@@ -29,18 +29,6 @@ class ItemsSeeder extends Seeder
             'criterating_id' => 1,
             'description' => 'Two Brothers',
             ]
-        );
-        DB::table('items')->insert(
-            [
-            'criterating_id' => 2,
-            'description' => 'Apple',
-            ]
-        );
-        DB::table('items')->insert(
-            [
-            'criterating_id' => 1,
-            'description' => 'Pear',
-            ]
-        );
+            );
     }
 }

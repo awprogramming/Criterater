@@ -23,7 +23,7 @@ class CriteriaSeeder extends Seeder
             [
             'criterating_id' => 1,
             'description' => 'Callbacks',
-            'weight' => 30,
+            'weight' => 10,
             ]
         );
         DB::table('criteria')->insert(

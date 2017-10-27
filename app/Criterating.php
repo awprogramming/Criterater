@@ -14,4 +14,8 @@ class Criterating extends Model
     public function items(){
         return $this->hasMany('\App\Item');
     }
+
+    public function owner(){
+        return $this->hasOne('\App\User');
+    }
 }

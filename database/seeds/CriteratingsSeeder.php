@@ -15,16 +15,19 @@ class CriteratingsSeeder extends Seeder
         DB::table('criteratings')->insert(
             [
             'description' => 'Interdimensional Cable',
+            'owner' => 1
             ]
         );
         DB::table('criteratings')->insert(
             [
             'description' => 'Fruits',
+            'owner' => 1
             ]
         );
         DB::table('criteratings')->insert(
             [
             'description' => 'TV Shows',
+            'owner' => 2
             ]
         );
     }
