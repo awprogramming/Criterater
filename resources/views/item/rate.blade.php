@@ -9,18 +9,17 @@
     <h2>{{$rating->criterion->description}} ({{$rating->criterion->weight}}%)</h2>
     <form action="{{route('save_ratings',['criterating_id'=>$criterating_id,'item_id'=>$item->id])}}" method="post">
     {{csrf_field()}}
-    <table class="table">
+    <table class="table rate">
         <tr>
-            <td><input class="rating" type="range" min='0' max='10' value="{{$rating->score}}" name="ratings[{{$rating->id}}]"></td>
-            <td><span class="score" data-weight="{{$rating->criterion->weight}}">{{$rating->score}}</span></td>
+            <td class="slider"><input class="rating" type="range" min='0' max='10' value="{{$rating->score}}" name="ratings[{{$rating->id}}]"></td>
+            <td class="rating"><span class="score" data-weight="{{$rating->criterion->weight}}">{{$rating->score}}</span></td>
         </tr>
         </table>
     </div>
     @endforeach
     <div>
-    <h2>Total</h2>
-    <span id="total"></span>
-    <input type="submit">
+    <h2><span id="total_title">Total</span><span id="total"></span></h2>
+    <input type="submit" class="btn btn-primary center">
     </form>
     </div>
 </div>

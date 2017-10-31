@@ -11,7 +11,7 @@
         @if(!$show_mine)
         @if($mine)
         <a href="{{route('edit_criteria',['criterating_id'=>$criterating_id])}}" class="btn btn-primary" role="button">Edit Criteria</a>
-        <form action="{{route('delete_criterating',['criterating_id'=>$criterating_id])}}" method="POST">
+        <form id="del" action="{{route('delete_criterating',['criterating_id'=>$criterating_id])}}" method="POST">
             {{ method_field('DELETE') }}
             {{ csrf_field() }}
             <button class="btn btn-primary">X</button>
@@ -22,7 +22,7 @@
         @endif
         <div>      
         </div>
-        <table class="table">
+        <table id="ratings_table" class="table tablesorter">
           <thead>
             <tr>
             <th></th>
@@ -83,4 +83,10 @@
         @endif
       </div>
     </div>
+    <script>
+      $(document).ready(function(){ 
+          $("#ratings_table").tablesorter(); 
+      }); 
+    </script>
+
 @endsection
